@@ -1,0 +1,47 @@
+{
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "istanbul": "^0.4.5",
+    "jasmine": "^3.7.0",
+    "jasmine-browser-runner": "^0.4.0",
+    "jasmine-console-reporter": "^3.1.0",
+    "jasmine-core": "^3.7.1",
+    "jasmine-node": "^3.0.0",
+    "jasmine-supertest": "^1.0.0",
+    "karma": "^6.3.2",
+    "karma-browserify": "^8.0.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^4.0.1",
+    "karma-jasmine-html-reporter": "^1.5.4",
+    "karma-requirejs": "^1.1.0",
+    "karma-webpack": "^5.0.0",
+    "nyc": "^15.1.0",
+    "supertest": "^6.1.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jslint": "^0.12.1",
+    "karma-coverage": "^2.0.3"
+  },
+  "name": "banktechtest",
+  "description": "### User Stories ``` As a client So that I can use the services of the bank I would like to set up a bank account",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "nyc --reporter=text jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kerisic/banktechtest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kerisic/banktechtest/issues"
+  },
+  "homepage": "https://github.com/kerisic/banktechtest#readme"
+}
