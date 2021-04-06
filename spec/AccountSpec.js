@@ -1,6 +1,7 @@
 describe('Account', function() {
   var account;
   var Account = require('../lib/Account');
+  var Transaction = require('../lib/Transaction');
 
   beforeEach(() => {
 		account = new Account;
@@ -37,6 +38,29 @@ describe('Account', function() {
       expect(account.balance).toEqual(200);
     });
   });
-        
+
+  
+  describe('it has a history of transactions', function() {
+    it('should as a new account have an empty array for its transactions log', () => {
+      expect(account.transactions).toEqual([]);
+    });
+
+    it('records a deposit in its transactions', () => {
+      account.deposit(200);
+      expect(account.transactions.length).toEqual(1);
+    });
+
+    it('records a withdrawal in its transactions', () => {
+      account.deposit(200);
+      account.withdraw(100);
+      expect(account.transactions.length).toEqual(2);
+    });
+
+    it('records the date of the transaction', () => {
+      account.deposit(200, '14/01/2012')
+      expect(account.transactions[0].date).toEqual('14/01/2012')
+    })
+  });
+    
 });
   
