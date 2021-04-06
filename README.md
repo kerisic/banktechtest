@@ -25,6 +25,7 @@ I would like the bank statement to show all dates of credits, debits and balance
 As a client
 So that I can view the most recent transaction
 I would like the bank statement to be in reverse chronological order
+```
 
 ### Sequence diagram
 
