@@ -30,10 +30,20 @@ describe('Bank', function() {
   
   describe('makeAWithdrawal', function() {
     it('instructs account to withdraw an amount', () => {
-      bank.makeADeposit(40)
-      bank.makeAWithdrawal(20)
+      bank.makeADeposit(40);
+      bank.makeAWithdrawal(20);
       expect(bank.getBalance()).toEqual(20);
       //how to test having an account spy object and withdraw is called on it
+    });
+  });
+
+  
+  describe('printStatement', function() {
+    it('should print the deposit transaction after a deposit has been made', () => {
+      bank.makeADeposit(40);
+      let date = new Date().toLocaleDateString()
+      expect(bank.printStatement()).toContain(`${date} ||  || 40.00 || 40.00\n`)
+    // how to test console output?
     });
   });
     
