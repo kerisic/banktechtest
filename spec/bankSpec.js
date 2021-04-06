@@ -1,11 +1,12 @@
-describe('Bank', function() {
-  var Bank = require('../lib/Bank');
-  var bank; 
+const Account = require('../lib/Account');
 
+describe('Bank', function() {
+  var bank;
+  var Bank = require('../lib/Bank');
   
   beforeEach(function() {
-    let account = jasmine.createSpy('account');
-    bank = new Bank(account);
+    bank = new Bank;
+    bank.newAccount();
   });
     
   it('should instantiate a new Bank instance', () => {   
@@ -14,11 +15,15 @@ describe('Bank', function() {
 
   describe('newAccount', function() {
     it('creates a new account', () => {
-      account = jasmine.createSpy('account');
-      bank = new Bank(account);
-      bank.newAccount();
-      expect(account).toHaveBeenCalled();
+      expect(bank.account).toBeInstanceOf(Account);
     });    
-  });   
+  });
+  
+  describe('makeADeposit', function() {
+    it('instructs account to deposit an amount and balance increases by that amount', () => {
+      bank.makeADeposit(20);
+      expect(bank.getBalance()).toEqual(20);
+    });
+  });
 });
   
