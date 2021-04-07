@@ -1,7 +1,5 @@
 'use strict';
 
-var Transaction = require('./Transaction');
-
 class Account {
   constructor(transactionClass = Transaction) {
     this._balance = 0;
@@ -29,5 +27,3 @@ class Account {
     this._transactions.push(transaction);
   }
 }
-
-module.exports = Account;

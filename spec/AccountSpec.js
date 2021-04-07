@@ -1,7 +1,5 @@
 describe('Account', function() {
   var account;
-  var Account = require('../lib/Account');
-  var Transaction = require('../lib/Transaction');
 
   beforeEach(() => {
 		account = new Account;
