@@ -11,10 +11,12 @@ class Bank {
 
   makeADeposit(amount) {
     this.account.deposit(amount);
+    return this.getBalance();
   }
 
   makeAWithdrawal(amount) {
     this.account.withdraw(amount);
+    return this.getBalance();
   }
 
   getBalance() {
