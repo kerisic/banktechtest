@@ -1,7 +1,7 @@
 'use strict';
 
 class Bank {
-  constructor() {;
+  constructor() {
     this.account = null;
   }
 
