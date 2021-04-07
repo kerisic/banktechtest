@@ -40,7 +40,7 @@ describe('Bank', function() {
     it('should have details of a deposit in the statement when a deposit was made in the past', () => {
       bank.makeADeposit(40);
       let date = new Date().toLocaleDateString()
-      expect(bank.printStatement()).toContain(`${date} ||  || 40.00 || 40.00\n`)
+      expect(bank.printStatement()).toContain(`${date} || 40.00 ||  || 40.00\n`)
     // how to test console output?
     });
   });
