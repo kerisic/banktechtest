@@ -1,7 +1,5 @@
 describe('Bank', function() {
-  var bank;
-  var Bank = require('../lib/Bank');
-  var Account = require('../lib/Account')
+  var bank
   
   beforeEach(function() {
     bank = new Bank;
@@ -39,7 +37,7 @@ describe('Bank', function() {
 
   
   describe('printStatement', function() {
-    it('should print the deposit transaction after a deposit has been made', () => {
+    it('should have details of a deposit in the statement when a deposit was made in the past', () => {
       bank.makeADeposit(40);
       let date = new Date().toLocaleDateString()
       expect(bank.printStatement()).toContain(`${date} ||  || 40.00 || 40.00\n`)
