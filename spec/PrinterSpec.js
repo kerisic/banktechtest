@@ -10,6 +10,11 @@ describe('Printer', function() {
       let array = [{date: "07/04/2021", credit: "", debit: "200.00", balance: "400.00"}]
       expect(Printer.print(array)[1]).toEqual("07/04/2021 ||  || 200.00 || 400.00\n");
     });
+
+    it('displays the transaction objects in reverse order relative to position in array passed as argument', () => {
+      let array= [{date: "07/04/2021", credit: "", debit: "200.00", balance: "400.00"}, {date: "08/04/2021", credit: "", debit: "200.00", balance: "400.00"}];
+      expect(Printer.print(array)[1]).toEqual("08/04/2021 ||  || 200.00 || 400.00\n");
+    })
   });
     
 });
