@@ -31,8 +31,8 @@ This is a tech test with the functionality of a basic bank to assess object-orie
 ```
 bank = new Bank // create a new Bank instance
 bank.newAccount() // set up a new bank account
-bank.makeADeposit(100) // deposit 100.00 into your account
-bank.makeAWithdrawal(50) // withdraw 50.00 from your account
+bank.makeDeposit(100) // deposit 100.00 into your account
+bank.makeWithdrawal(50) // withdraw 50.00 from your account
 bank.printStatement() // display transaction history of your account with most recent first
 
 date || credit || debit || balance
@@ -71,6 +71,12 @@ I would like the bank statement to be in reverse chronological order
 
 <img width="702" alt="Screenshot 2021-04-06 at 11 28 16" src="https://user-images.githubusercontent.com/71288920/113697550-3d8b5100-96cb-11eb-8881-9b2755e373c0.png">
 
+### Test Coverage
+
+* Reported using Karma and Istanbul
+
+<img width="608" alt="Screenshot 2021-04-08 at 18 49 29" src="https://user-images.githubusercontent.com/71288920/114073862-ac1f0900-989b-11eb-9339-171e909410fd.png">
+
 ### Approach
 
 * OO design planned with requirements organised into user stories/features and sequence diagraming.
@@ -83,6 +89,4 @@ I would like the bank statement to be in reverse chronological order
 
 ### Challenges
 
-* While I attempted to isolate unit tests, due to unfamiliarity with Jasmine's provision of spies, I was not sure how to write my tests with regards to dependency injection (or where best to position classes within Bank) etc. (I can however imagine what I'd need to do in Ruby's rspec)
-* Due to time constraints, I decided to test the bank class with dependency on the other classes providing that it returned the appropriate value.
-* I could not find an appropriate matcher or solution for testing console output, so I modified the printer function to also return the printed output for testing.
+* Isolating classes in unit tests (solved with spy functionality in Jasmine)
