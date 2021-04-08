@@ -55,8 +55,10 @@ describe('Account', function() {
     });
 
     it('records the date of the transaction', () => {
-      account.deposit(200, '14/01/2012')
-      expect(account.transactions[0].date).toEqual('14/01/2012')
+      var basedate = new Date()
+      jasmine.clock().mockDate(basedate);
+      account.deposit(200)
+      expect(account.transactions[0].date).toEqual(basedate)
     })
   });
     

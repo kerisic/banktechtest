@@ -8,7 +8,7 @@ class Printer {
     
     if (transactions.length > 0) {
       for(let i = 0; i < reverseOrder.length; i++) {
-        let date = reverseOrder[i].date;
+        let date = reverseOrder[i].date.toLocaleDateString();
         let credit = reverseOrder[i].credit;
         credit == "" ? "" : credit = credit.toFixed(2)
         let debit = reverseOrder[i].debit;

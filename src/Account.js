@@ -5,6 +5,7 @@ class Account {
     this._balance = 0;
     this._transactionClass = transactionClass;
     this._transactions = [];
+    this._date;
   }
  
   get balance() {
@@ -15,15 +16,17 @@ class Account {
     return this._transactions;
   }
 
-  deposit(amount, date = new Date().toLocaleDateString()) {
+  deposit(amount) {
     this._balance += amount;
-    let transaction = new this._transactionClass(date, amount, "", this.balance);
+    this._date = new Date();
+    let transaction = new this._transactionClass(this._date, amount, "", this.balance);
     this._transactions.push(transaction);
   }
 
-  withdraw(amount, date = new Date().toLocaleDateString()) {
+  withdraw(amount) {
     this._balance -= amount;
-    let transaction = new this._transactionClass(date, "" , amount, this.balance);
+    this._date = new Date()
+    let transaction = new this._transactionClass(this._date, "" , amount, this.balance);
     this._transactions.push(transaction);
   }
 }

@@ -13,7 +13,6 @@ describe('Bank', function() {
   describe('makeADeposit', function() {
     it('instructs account to deposit an amount', () => {
       bank.makeADeposit(20);
-      expect(bank.getBalance()).toEqual(20);
       //how to test dependency injection of account spy object and deposit is called on it?
     });
   });
@@ -23,7 +22,6 @@ describe('Bank', function() {
     it('instructs account to withdraw an amount', () => {
       bank.makeADeposit(40);
       bank.makeAWithdrawal(20);
-      expect(bank.getBalance()).toEqual(20);
       //how to test having an account spy object and withdraw is called on it
     });
   });
