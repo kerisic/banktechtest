@@ -49,13 +49,13 @@ describe('Account', function() {
     });
 
     it('records a withdrawal in its transactions', () => {
-      account.deposit(200);
+      account.deposit(200);                     
       account.withdraw(100);
       expect(account.transactions.length).toEqual(2);
     });
 
     it('records the date of the transaction', () => {
-      var basedate = new Date()
+      let basedate = new Date()
       jasmine.clock().mockDate(basedate);
       account.deposit(200)
       expect(account.transactions[0].date).toEqual(basedate)

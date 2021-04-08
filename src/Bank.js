@@ -9,14 +9,14 @@ class Bank {
     this._account = account;
   }
 
-  makeADeposit(amount) {
-    this._account.deposit(amount);
+  makeDeposit(amount) {
+    this._account.deposit(amount);        
   }
 
-  makeAWithdrawal(amount) {
-    this._account.withdraw(amount);
+  makeWithdrawal(amount) {
+    this._account.withdraw(amount);           
   }
-  
+
   printStatement() {
     return Printer.print(this._account.transactions)
   }

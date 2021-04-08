@@ -3,36 +3,36 @@ describe('Bank', function() {
   
   beforeEach(function() {
     bank = new Bank;
-    bank.newAccount();
+    account = jasmine.createSpyObj('account', ['deposit', 'withdraw'])
+    bank.newAccount(account);
   });
     
   it('should instantiate a new Bank instance', () => {   
     expect(bank).toBeInstanceOf(Bank);
   });
   
-  describe('makeADeposit', function() {
+  describe('makeDeposit', function() {
     it('instructs account to deposit an amount', () => {
-      bank.makeADeposit(20);
-      //how to test dependency injection of account spy object and deposit is called on it?
+      bank.makeDeposit(20);
+      expect(account.deposit).toHaveBeenCalledWith(20);
     });
   });
-
   
-  describe('makeAWithdrawal', function() {
+  describe('makeWithdrawal', function() {
     it('instructs account to withdraw an amount', () => {
-      bank.makeADeposit(40);
-      bank.makeAWithdrawal(20);
-      //how to test having an account spy object and withdraw is called on it
+      bank.makeDeposit(40);
+      bank.makeWithdrawal(20);
+      expect(account.withdraw).toHaveBeenCalledWith(20);
     });
   });
 
   
   describe('printStatement', function() {
-    it('should have details of a deposit in the statement when a deposit was made in the past', () => {
-      bank.makeADeposit(40);
-      let date = new Date().toLocaleDateString()
-      expect(bank.printStatement()).toContain(`${date} || 40.00 ||  || 40.00\n`)
-    // how to test console output?
+    it('should instruct a bank statement to be printed', () => {
+      bank.makeDeposit(40);
+      spyOn(Printer, 'print')
+      bank.printStatement();
+      expect(Printer.print).toHaveBeenCalled();
     });
   });
     
