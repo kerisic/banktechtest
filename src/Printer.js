@@ -1,24 +1,24 @@
 class Printer {
   static print(transactions) {
-    let header = 'date || credit || debit || balance'
-    let log = [];
-    log.push(header);
-    console.log(header)
-    let reverseOrder = transactions.reverse();
-    
-    if (transactions.length > 0) {
-      for(let i = 0; i < reverseOrder.length; i++) {
-        let date = reverseOrder[i].date.toLocaleDateString();
-        let credit = reverseOrder[i].credit;
-        credit == "" ? "" : credit = credit.toFixed(2)
-        let debit = reverseOrder[i].debit;
-        debit == "" ? "" : debit = debit.toFixed(2)
-        let balance = reverseOrder[i].balance.toFixed(2);
-        log.push(`${date} || ${credit} || ${debit} || ${balance}\n`)
-        console.log(`${date} || ${credit} || ${debit} || ${balance}`)
-      }
+    let formatted = Printer.format(transactions);
+    for(let i = 0; i < formatted.length; i++) {
+      console.log(formatted[i]);
     }
+  }
 
-    return log // log for testing purposes mainly
+  static format(transactions) {
+    let header = 'date || credit || debit || balance\n'
+    let formatted = [];
+    formatted.push(header);
+    for(let i = transactions.length - 1; i >= 0; i--) {
+        let date = transactions[i].date.toLocaleDateString();
+        let credit;
+        let debit;
+        let balance = transactions[i].balance.toFixed(2);
+        transactions[i].credit == "" ? credit = "" : credit = transactions[i].credit.toFixed(2)
+        transactions[i].debit == "" ? debit = "" : debit = transactions[i].debit.toFixed(2)
+        formatted.push(`${date} || ${credit} || ${debit} || ${balance}\n`)
+    }
+    return formatted;
   }
 }
