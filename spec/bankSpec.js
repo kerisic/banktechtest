@@ -9,13 +9,6 @@ describe('Bank', function() {
   it('should instantiate a new Bank instance', () => {   
     expect(bank).toBeInstanceOf(Bank);
   });
-
-  describe('newAccount', function() {
-    it('creates a new account', () => {
-      expect(bank.account).toBeInstanceOf(Account);
-      //how to test passing a spy object of account and instantiation is called on it?
-    });    
-  });
   
   describe('makeADeposit', function() {
     it('instructs account to deposit an amount', () => {

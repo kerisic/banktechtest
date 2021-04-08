@@ -17,13 +17,13 @@ class Account {
 
   deposit(amount, date = new Date().toLocaleDateString()) {
     this._balance += amount;
-    let transaction = new this._transactionClass(date, amount.toFixed(2), "", this.balance.toFixed(2));
+    let transaction = new this._transactionClass(date, amount, "", this.balance);
     this._transactions.push(transaction);
   }
 
   withdraw(amount, date = new Date().toLocaleDateString()) {
     this._balance -= amount;
-    let transaction = new this._transactionClass(date, "" , amount.toFixed(2), this.balance.toFixed(2));
+    let transaction = new this._transactionClass(date, "" , amount, this.balance);
     this._transactions.push(transaction);
   }
 }
