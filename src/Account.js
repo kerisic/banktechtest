@@ -1,11 +1,11 @@
 'use strict'
 
-class Account {
+class Account { // eslint-disable-line no-unused-vars
   constructor (transactionClass = Transaction) {
     this._balance = 0
     this._transactionClass = transactionClass
     this._transactions = []
-    this._date
+    this._date = null
   }
 
   get balance () {

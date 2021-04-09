@@ -3,7 +3,7 @@ describe('Bank', function () {
 
   beforeEach(function () {
     bank = new Bank()
-    account = jasmine.createSpyObj('account', ['deposit', 'withdraw'])
+    account = jasmine.createSpyObj('account', ['deposit', 'withdraw']) // eslint-disable-line no-global-assign
     bank.newAccount(account)
   })
 

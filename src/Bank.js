@@ -1,6 +1,6 @@
 'use strict'
 
-class Bank {
+class Bank { // eslint-disable-line no-unused-vars
   constructor () {
     this._account = null
   }
@@ -15,6 +15,10 @@ class Bank {
 
   makeWithdrawal (amount) {
     this._account.withdraw(amount)
+  }
+
+  getBalance () {
+    return this._account.balance
   }
 
   printStatement () {

@@ -43,5 +43,12 @@
   "bugs": {
     "url": "https://github.com/kerisic/banktechtest/issues"
   },
+  "standard": {
+    "ignore": [
+      "/lib/"
+    ],
+    "globals": [ 
+      "Account", "Bank", "Transaction", "Printer", "date", "expect", "describe", "it", "transaction", "jasmine", "account", "beforeEach", "spyOn" ]
+  },
   "homepage": "https://github.com/kerisic/banktechtest#readme"
 }

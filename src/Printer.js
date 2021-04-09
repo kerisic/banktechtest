@@ -1,4 +1,4 @@
-class Printer {
+class Printer { // eslint-disable-line no-unused-vars
   static print (transactions) {
     const formatted = Printer.format(transactions)
     for (let i = 0; i < formatted.length; i++) {

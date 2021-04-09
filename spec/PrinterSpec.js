@@ -1,3 +1,4 @@
+/* eslint-disable no-global-assign */
 describe('Printer', function () {
   describe('print', function () {
     it('outputs to the console', () => {
@@ -31,3 +32,4 @@ describe('Printer', function () {
     })
   })
 })
+/* eslint-disable no-global-assign */
