@@ -1,4 +1,4 @@
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
     basePath: '',
     autoWatch: true,
@@ -14,5 +14,5 @@ module.exports = function(config) {
       'src/*.js': ['coverage']
     },
     singleRun: true
-  });
-};
+  })
+}

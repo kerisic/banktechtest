@@ -1,24 +1,23 @@
-'use strict';
+'use strict'
 
 class Bank {
-  constructor() {
-    this._account = null;
+  constructor () {
+    this._account = null
   }
 
-  newAccount(account = new Account) {
-    this._account = account;
+  newAccount (account = new Account()) {
+    this._account = account
   }
 
-  makeDeposit(amount) {
-    this._account.deposit(amount);        
+  makeDeposit (amount) {
+    this._account.deposit(amount)
   }
 
-  makeWithdrawal(amount) {
-    this._account.withdraw(amount);           
+  makeWithdrawal (amount) {
+    this._account.withdraw(amount)
   }
 
-  printStatement() {
+  printStatement () {
     return Printer.print(this._account.transactions)
   }
 }
-
